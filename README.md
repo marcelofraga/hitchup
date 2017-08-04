@@ -10,7 +10,7 @@ $ npm install --save pike
 ## Usage
 
 ```js
-const Pike = require('Pike');
+import Pike from 'pike';
 
 new Pike('Rainbow');
 ```

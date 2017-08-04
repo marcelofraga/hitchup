@@ -1,4 +1,4 @@
-const Pike = require('../index.js');
+import Pike from '../src/pike';
 
 describe('Pike', () => {
   it('should be defined', () => {
