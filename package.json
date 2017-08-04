@@ -1,0 +1,25 @@
+{
+  "name": "pike",
+  "version": "0.0.0",
+  "description": "Declarative reactive data binding solution.",
+  "author": "Marcelo Fraga <marcelo.fraga@me.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "eslint": "^4.1.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.4"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true
+    }
+  },
+  "license": "MIT"
+}
