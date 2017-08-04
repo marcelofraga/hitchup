@@ -1,3 +1,14 @@
 {
-  "presets": ["es2015"]
+  "env": {
+    "development": {
+      "presets": [
+        ["es2015", { "modules": false }],
+        "flow"
+      ],
+      "plugins": ["external-helpers"],
+    },
+    "test": {
+      "presets": ["es2015", "flow"]
+    }
+  }
 }
