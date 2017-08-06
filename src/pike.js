@@ -1,49 +1,20 @@
 // @flow
 
-import binders from './binders';
-
-function binding(element: HTMLElement, attribute: Attr, data: Object) {
-  const bindingRegExp: RegExp = /^data-/;
-  const {name, value}: {name: string, value: string} = attribute;
-
-  if (bindingRegExp.test(name)) {
-    const type: string = name.replace(bindingRegExp, '');
-    const binder: ?Function = binders[type];
-
-    if (binder) {
-      binder(element, data[value]);
-    }
-  }
-}
-
-function parse(element: HTMLElement, data) {
-  if (element.nodeType !== 1 && element.nodeType !== 3) {
-    return;
-  }
-
-  const {attributes}: {attributes: NamedNodeMap} = element;
-
-  for (let i = 0; i < attributes.length; i++) {
-    const attribute: Attr = attributes[i];
-    binding(element, attribute, data);
-  }
-}
+import parse from './parse';
 
 class Pike {
   element: HTMLElement;
-  data: Object;
+  model: Object;
 
-  constructor(element: HTMLElement, data: Object = {}) {
+  constructor(element: HTMLElement, model: Object = {}) {
     this.element = element;
-    this.data = data;
+    this.model = model;
 
     this.build();
   }
 
   build() {
-    for (let child of this.element.children) {
-      parse(child, this.data);
-    }
+    parse.call(this.model, this.element);
   }
 }
 
