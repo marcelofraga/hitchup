@@ -1,4 +1,4 @@
-# hitchup [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# hitchup [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] ![Stability][stability-image]
 > Declarative data binding solution.
 
 ## Installation
@@ -33,3 +33,4 @@ MIT © [Marcelo Fraga]()
 [daviddm-url]: https://david-dm.org/marcelofraga/hitchup
 [coveralls-image]: https://coveralls.io/repos/marcelofraga/hitchup/badge.svg
 [coveralls-url]: https://coveralls.io/r/marcelofraga/hitchup
+[stability-image]: https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg
