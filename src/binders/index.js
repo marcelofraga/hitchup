@@ -1,13 +1,17 @@
 // @flow
 
-import show from './show';
 import hide from './hide';
+import show from './show';
+import text from './text';
+import html from './html';
 
 const binders: {
   [string]: Function
 } = {
+  hide,
   show,
-  hide
+  text,
+  html
 };
 
 export default binders;

@@ -2,7 +2,7 @@ import Pike from '../src/pike';
 
 const data = {
   user: {
-    isHidden: true
+    name: 'John'
   }
 };
 
@@ -19,7 +19,7 @@ class Dummy {
 beforeEach(() => {
   document.body.innerHTML = `
     <div class="user">
-      <span class="user-name" data-hide="user.isHidden"></span>
+      <span class="user-name" data-text="user.name"></span>
     </div>
   `;
 
@@ -40,7 +40,7 @@ describe('Pike', () => {
 
   it('run binders by the declarative data binding of the element', () => {
     const child = element.children[0];
-    expect(child.style.display).toEqual('none');
+    expect(child.textContent).toEqual('John');
   });
 
   describe('when model is a class instance', () => {
@@ -50,7 +50,7 @@ describe('Pike', () => {
 
     it('run binder with instance as data model', () => {
       const child = element.children[0];
-      expect(child.style.display).toEqual('none');
+      expect(child.textContent).toEqual('John');
     });
   });
 });
