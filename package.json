@@ -1,9 +1,13 @@
 {
   "name": "hitchup",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Declarative data binding solution.",
   "author": "Marcelo Fraga <marcelo.fraga@me.com>",
   "main": "dist/hitchup.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcelofraga/hitchup.git"
+  },
   "scripts": {
     "prepublish": "npm run build",
     "build": "rollup -c",
