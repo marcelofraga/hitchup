@@ -19,6 +19,44 @@ var binders = {
   hide: hide
 };
 
+var bindingRegExp = /^data-/;
+
+function binding(element, attribute) {
+  var attrName = attribute.name;
+  var attrValue = attribute.value;
+
+  if (bindingRegExp.test(attrName)) {
+    var type = attrName.replace(bindingRegExp, '');
+    var binder = binders[type];
+
+    if (binder) {
+      var value = attrValue.split('.').reduce(function (object, prop) {
+        return object && object[prop];
+      }, this);
+      binder(element, value);
+    }
+  }
+}
+
+function parse(element) {
+  var _this = this;
+
+  if (element.nodeType !== Node.ELEMENT_NODE && element.nodeType !== Node.TEXT_NODE) {
+    throw new TypeError('must be an element or text node');
+  }
+
+  var attributes = element.attributes,
+      children = element.children;
+
+
+  Object.values(attributes).forEach(function (attribute) {
+    return binding.call(_this, element, attribute);
+  });
+  Object.values(children).forEach(function (child) {
+    return parse.call(_this, child);
+  });
+}
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -43,43 +81,13 @@ var createClass = function () {
   };
 }();
 
-function binding(element, attribute, data) {
-  var bindingRegExp = /^data-/;
-  var name = attribute.name,
-      value = attribute.value;
-
-
-  if (bindingRegExp.test(name)) {
-    var type = name.replace(bindingRegExp, '');
-    var binder = binders[type];
-
-    if (binder) {
-      binder(element, data[value]);
-    }
-  }
-}
-
-function parse(element, data) {
-  if (element.nodeType !== 1 && element.nodeType !== 3) {
-    return;
-  }
-
-  var attributes = element.attributes;
-
-
-  for (var i = 0; i < attributes.length; i++) {
-    var attribute = attributes[i];
-    binding(element, attribute, data);
-  }
-}
-
 var Pike = function () {
   function Pike(element) {
-    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var model = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     classCallCheck(this, Pike);
 
     this.element = element;
-    this.data = data;
+    this.model = model;
 
     this.build();
   }
@@ -87,30 +95,7 @@ var Pike = function () {
   createClass(Pike, [{
     key: 'build',
     value: function build() {
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = this.element.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var child = _step.value;
-
-          parse(child, this.data);
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
+      parse.call(this.model, this.element);
     }
   }]);
   return Pike;
