@@ -1,7 +1,7 @@
 {
   "name": "pike",
   "version": "0.0.0",
-  "description": "Declarative reactive data binding solution.",
+  "description": "Declarative data binding solution.",
   "author": "Marcelo Fraga <marcelo.fraga@me.com>",
   "main": "dist/pike.js",
   "scripts": {
