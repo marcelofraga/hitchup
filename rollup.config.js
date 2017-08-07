@@ -3,13 +3,13 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 
 export default {
-  entry: 'src/pike.js',
+  entry: 'src/hitchup.js',
   format: 'umd',
-  moduleName: 'pike',
+  moduleName: 'hitchup',
   plugins: [
     resolve(),
     commonjs(),
     babel()
   ],
-  dest: 'dist/pike.js'
+  dest: 'dist/hitchup.js'
 };

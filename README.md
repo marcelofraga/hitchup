@@ -1,10 +1,10 @@
-# pike [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> 🚧 Work in progress.
+# hitchup [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> Declarative data binding solution..
 
 ## Installation
 
 ```sh
-$ npm install --save pike
+$ npm install --save hitchup
 ```
 
 ## Usage
@@ -17,19 +17,19 @@ $ npm install --save pike
 ```
 
 ```js
-import Pike from 'pike';
-new Pike(document.querySelector('.user'), { user });
+import Hitchup from 'hitchup';
+new Hitchup(document.querySelector('.user'), { user });
 ```
 ## License
 
 MIT © [Marcelo Fraga]()
 
 
-[npm-image]: https://badge.fury.io/js/pike.svg
-[npm-url]: https://npmjs.org/package/pike
-[travis-image]: https://travis-ci.org/marcelofraga/pike.svg?branch=master
-[travis-url]: https://travis-ci.org/marcelofraga/pike
-[daviddm-image]: https://david-dm.org/marcelofraga/pike.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/marcelofraga/pike
-[coveralls-image]: https://coveralls.io/repos/marcelofraga/pike/badge.svg
-[coveralls-url]: https://coveralls.io/r/marcelofraga/pike
+[npm-image]: https://badge.fury.io/js/hitchup.svg
+[npm-url]: https://npmjs.org/package/hitchup
+[travis-image]: https://travis-ci.org/marcelofraga/hitchup.svg?branch=master
+[travis-url]: https://travis-ci.org/marcelofraga/hitchup
+[daviddm-image]: https://david-dm.org/marcelofraga/hitchup.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/marcelofraga/hitchup
+[coveralls-image]: https://coveralls.io/repos/marcelofraga/hitchup/badge.svg
+[coveralls-url]: https://coveralls.io/r/marcelofraga/hitchup

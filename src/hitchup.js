@@ -2,7 +2,7 @@
 
 import parse from './parse';
 
-class Pike {
+class Hitchup {
   element: HTMLElement;
   model: Object;
 
@@ -18,4 +18,4 @@ class Pike {
   }
 }
 
-export default Pike;
+export default Hitchup;

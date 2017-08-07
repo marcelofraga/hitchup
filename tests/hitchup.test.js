@@ -1,4 +1,4 @@
-import Pike from '../src/pike';
+import Hitchup from '../src/hitchup';
 
 const data = {
   user: {
@@ -24,13 +24,13 @@ beforeEach(() => {
   `;
 
   element = document.querySelector('.user');
-  instance = new Pike(element, data);
+  instance = new Hitchup(element, data);
   dummy = new Dummy(element, data);
 });
 
-describe('Pike', () => {
+describe('Hitchup', () => {
   it('throws type error when does not pass an element', () => {
-    expect(() => new Pike('.user')).toThrowError('must be an element or text node');
+    expect(() => new Hitchup('.user')).toThrowError('must be an element or text node');
   });
 
   it('sets element and model', () => {
@@ -45,7 +45,7 @@ describe('Pike', () => {
 
   describe('when model is a class instance', () => {
     beforeEach(() => {
-      instance = new Pike(element, dummy);
+      instance = new Hitchup(element, dummy);
     });
 
     it('run binder with instance as data model', () => {

@@ -1,9 +1,9 @@
 {
-  "name": "pike",
+  "name": "hitchup",
   "version": "0.0.0",
   "description": "Declarative data binding solution.",
   "author": "Marcelo Fraga <marcelo.fraga@me.com>",
-  "main": "dist/pike.js",
+  "main": "dist/hitchup.js",
   "scripts": {
     "prepublish": "npm run build",
     "build": "rollup -c",
