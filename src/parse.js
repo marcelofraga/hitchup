@@ -12,6 +12,11 @@ export default function parse(element: HTMLElement) {
     children: HTMLCollection<HTMLElement>
   } = element;
 
-  Object.values(attributes).forEach((attribute: any) => binding.call(this, element, attribute));
-  Object.values(children).forEach((child: any) => parse.call(this, child));
+  for (let i = 0; i < attributes.length; i++) {
+    binding.call(this, element, attributes[i]);
+  }
+
+  for (let i = 0; i < children.length; i++) {
+    parse.call(this, children[i]);
+  }
 }

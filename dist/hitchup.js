@@ -49,8 +49,6 @@ function binding(element, attribute) {
 }
 
 function parse(element) {
-  var _this = this;
-
   if (element.nodeType !== Node.ELEMENT_NODE && element.nodeType !== Node.TEXT_NODE) {
     throw new TypeError('must be an element or text node');
   }
@@ -59,12 +57,13 @@ function parse(element) {
       children = element.children;
 
 
-  Object.values(attributes).forEach(function (attribute) {
-    return binding.call(_this, element, attribute);
-  });
-  Object.values(children).forEach(function (child) {
-    return parse.call(_this, child);
-  });
+  for (var i = 0; i < attributes.length; i++) {
+    binding.call(this, element, attributes[i]);
+  }
+
+  for (var _i = 0; _i < children.length; _i++) {
+    parse.call(this, children[_i]);
+  }
 }
 
 var classCallCheck = function (instance, Constructor) {
