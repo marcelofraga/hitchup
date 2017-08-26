@@ -11,8 +11,8 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "rollup -c",
-    "pretest": "eslint . --fix",
-    "test": "jest --coverage"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

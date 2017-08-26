@@ -1,4 +1,4 @@
-import hide from '../../src/binders/hide';
+import hide from '../../src/directives/hide';
 
 let element;
 

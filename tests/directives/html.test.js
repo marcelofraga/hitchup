@@ -1,4 +1,4 @@
-import html from '../../src/binders/html';
+import html from '../../src/directives/html';
 
 let element;
 

@@ -3,9 +3,9 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 
 export default {
-  entry: 'src/hitchup.js',
+  entry: 'src/index.js',
   format: 'umd',
-  moduleName: 'hitchup',
+  moduleName: 'Hitchup',
   plugins: [
     resolve(),
     commonjs(),

@@ -1,4 +1,4 @@
-import text from '../../src/binders/text';
+import text from '../../src/directives/text';
 
 let element;
 

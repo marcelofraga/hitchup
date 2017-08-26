@@ -12,13 +12,13 @@ $ npm install --save hitchup
 ```html
 <section class="user">
   <h1 data-text="user.name"></h1>
-  <p data-text="user.email"></p>
+  <div data-html="user.bio"></div>
 </section>
 ```
 
 ```js
-import Hitchup from 'hitchup';
-new Hitchup(document.querySelector('.user'), { user });
+import hitchup from 'hitchup';
+hitchup(document.querySelector('.user'), {user});
 ```
 ## License
 

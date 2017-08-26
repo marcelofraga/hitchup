@@ -1,4 +1,4 @@
-import show from '../../src/binders/show';
+import show from '../../src/directives/show';
 
 let element;
 
