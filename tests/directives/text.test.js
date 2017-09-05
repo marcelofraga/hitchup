@@ -7,7 +7,7 @@ beforeAll(() => {
   element = document.querySelector('.element');
 });
 
-describe('binders:text', () => {
+describe('directives:text', () => {
   it('sets element text with value', () => {
     text(element, 'Foo Bar');
     expect(element.textContent).toEqual('Foo Bar');

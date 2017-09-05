@@ -7,7 +7,7 @@ beforeAll(() => {
   element = document.querySelector('.element');
 });
 
-describe('binders:hide', () => {
+describe('directives:hide', () => {
   it('hides element when value is true', () => {
     hide(element, true);
     expect(element.style.display).toEqual('none');

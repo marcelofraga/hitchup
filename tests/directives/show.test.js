@@ -7,7 +7,7 @@ beforeAll(() => {
   element = document.querySelector('.element');
 });
 
-describe('binders:show', () => {
+describe('directives:show', () => {
   it('shows element when value is true', () => {
     show(element, true);
     expect(element.style.display).toEqual('');

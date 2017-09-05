@@ -7,7 +7,7 @@ beforeAll(() => {
   element = document.querySelector('.element');
 });
 
-describe('binders:html', () => {
+describe('directives:html', () => {
   it('sets element html with value', () => {
     html(element, '<strong>Foo Bar</strong>');
     expect(element.innerHTML).toEqual('<strong>Foo Bar</strong>');
