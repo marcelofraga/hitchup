@@ -43,7 +43,7 @@ function buildDirectives(instance: Object, element: HTMLElement) {
     if (binding && typeof binding === 'object') {
       const {bind, publish, update}: {bind: Function, publish: Function, update: Function} = binding;
 
-      bind(element, publish.bind(instance, value));
+      bind(element, publish.bind(instance.$data, value));
       instance.$directives[value].push({element, binding: update});
     } else {
       instance.$directives[value].push({element, binding});
