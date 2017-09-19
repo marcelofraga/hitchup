@@ -10,6 +10,7 @@ describe('Directives', () => {
     document.body.innerHTML = `
       <div class="foo" data-show="isVisible">
         <span class="bar" data-text="message"></span>
+        <input class="baz" data-model="message">
       </div>
     `;
 
@@ -22,6 +23,9 @@ describe('Directives', () => {
       message: [{
         binding: expect.any(Function),
         element: element.children[0]
+      }, {
+        binding: expect.any(Function),
+        element: element.children[1]
       }],
       isVisible: [{
         binding: expect.any(Function),

@@ -4,6 +4,9 @@ import hide from './hide';
 import show from './show';
 import text from './text';
 import html from './html';
+import enabled from './enabled';
+import disabled from './disabled';
+import model from './model';
 
 const bindingEx: RegExp = /^data-/;
 const directives: {
@@ -12,7 +15,10 @@ const directives: {
   hide,
   show,
   text,
-  html
+  html,
+  enabled,
+  disabled,
+  model
 };
 
 function buildDirectives(instance: Object, element: HTMLElement) {
@@ -30,10 +36,18 @@ function buildDirectives(instance: Object, element: HTMLElement) {
     }
 
     const type: string = name.replace(bindingEx, '');
-    const binding: ?Function = directives[type];
+    const binding: ?Function | ?Object = directives[type];
 
     instance.$directives[value] = instance.$directives[value] || [];
-    instance.$directives[value].push({element, binding});
+
+    if (binding && typeof binding === 'object') {
+      const {bind, publish, update}: {bind: Function, publish: Function, update: Function} = binding;
+
+      bind(element, publish.bind(instance, value));
+      instance.$directives[value].push({element, binding: update});
+    } else {
+      instance.$directives[value].push({element, binding});
+    }
   }
 
   for (let i = 0; i < children.length; i++) {
